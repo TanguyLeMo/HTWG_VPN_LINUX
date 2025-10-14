@@ -17,8 +17,7 @@ while [ -h "$SOURCE" ]; do
 done
 workingDir="$(cd -P "$(dirname "$SOURCE")" >/dev/null 2>&1 && pwd)"
 # Paths
-pathToConfigFile="$workingDir/HTWG-MFA-SOSE25-STUD.ovpn"
-authFile="$workingDir/auth.txt"
+pathToConfigFile="$workingDir/HTWG-MFA-WS2526-STUD.ovpn"
 pathToPythonScript="$workingDir/getotp.py"
 logFile="$workingDir/vpn_log.txt"
 
@@ -38,7 +37,6 @@ fi
 passwordExtension="$(echo "$passwordExtension" | xargs)"
 
 # Write auth file
-echo -e "$userName\n${password}${passwordExtension}" > "$authFile"
 if [ $? -ne 0 ]; then
   echo "[ERROR] Writing auth file failed." >> "$logFile"
   exit 1

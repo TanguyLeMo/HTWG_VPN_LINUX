@@ -52,6 +52,13 @@ export HTWG_TOTP_SECRET="SECRET_FROM_MFA_APP"
 > to have them loaded automatically on startup.
 
 ---
+# PyOTP
+
+Make sure your python environment has access to the PyOTP lib. If not you can install it via
+````bash
+pip install pyotp
+````
+
 
 ## Usage
 
