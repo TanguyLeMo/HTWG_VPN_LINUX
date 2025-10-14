@@ -110,16 +110,6 @@ Common issues:
 
 ---
 
-## Cleanup (optional)
-
-After use, you can safely remove the temporary `auth.txt` file:
-
-```bash
-rm -f auth.txt
-```
-
----
-
 ## Example
 
 ```bash
@@ -131,31 +121,15 @@ export HTWG_TOTP_SECRET="JBSWY3DPEHPK3PXP"
 
 ---
 
-## Optional: Add to PATH or Create a Symlink
+## Optional: Create a Symlink
 
-To make the VPN script globally accessible from anywhere, you can add it to your system PATH or create a symbolic link.
-
-### Option 1: Move the script to `/usr/local/bin`
-
-```bash
-sudo mv /path/to/vpn-connect/vpn.sh /usr/local/bin/htwg-vpn
-sudo chmod +x /usr/local/bin/htwg-vpn
-```
-
-Now you can simply run:
+### Create a symlink 
+Execute this command while being in this repo.
 
 ```bash
-htwg-vpn
+sudo ln -s $PWD/connecttovpn.sh /usr/local/bin/htwgvpn
 ```
-
-### Option 2: Create a symlink instead
-
-```bash
-sudo ln -s /path/to/vpn-connect/vpn.sh /usr/local/bin/htwg-vpn
-```
-
 This way, you can keep your script in its project folder but still run it globally:
-
 ```bash
-htwg-vpn
+htwgvpn
 ```

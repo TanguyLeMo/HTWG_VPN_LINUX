@@ -28,7 +28,6 @@ pathToPython="python3"
 
 # OTP generation
 passwordExtension="$($pathToPython "$pathToPythonScript" $HTWG_TOTP_SECRET 2>> "$logFile")"
-echo "OTP: $passwordExtension"
 
 if [ $? -ne 0 ]; then
   echo "[ERROR] OTP generation failed." >> "$logFile"
@@ -41,8 +40,6 @@ if [ $? -ne 0 ]; then
   echo "[ERROR] Writing auth file failed." >> "$logFile"
   exit 1
 fi
-
-echo "$userName\n$password$passwordExtension"
 
 # Start OpenVPN connection
 openvpn --config "$pathToConfigFile" --auth-user-pass <(echo -e "$userName\n$password$passwordExtension")
