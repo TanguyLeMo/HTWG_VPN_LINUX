@@ -9,7 +9,7 @@ It combines your password with a **time-based one-time password (TOTP)** generat
 
 ```
 vpn-connect/
-├── vpn.sh                 -> Main script (executes the VPN connection)
+├── connecttovpn.sh                 -> Main script (executes the VPN connection)
 ├── getotp.py              -> Python script that generates the OTP from your TOTP secret
 └── vpn_log.txt            -> Log file for errors and debug output
 ```
@@ -59,13 +59,13 @@ export HTWG_TOTP_SECRET="SECRET_FROM_MFA_APP"
 1. **Make the script executable:**
 
    ```bash
-   chmod +x vpn.sh
+   chmod +x connecttovpn.sh
    ```
 
 2. **Run the script:**
 
    ```bash
-   ./vpn.sh
+   ./connecttovpn.sh
    ```
 
    * If not run as root, it will automatically restart with `sudo`.
@@ -116,7 +116,7 @@ Common issues:
 export VPN_USER="mmuster"
 export VPN_PASS="SuperSecure123"
 export HTWG_TOTP_SECRET="JBSWY3DPEHPK3PXP"
-./vpn.sh
+./connecttovpn.sh
 ```
 
 ---
