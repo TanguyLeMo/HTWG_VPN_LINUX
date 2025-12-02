@@ -16,6 +16,17 @@ while [ -h "$SOURCE" ]; do
   [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
 done
 workingDir="$(cd -P "$(dirname "$SOURCE")" >/dev/null 2>&1 && pwd)"
+
+# Activate virtual environment if it exists
+if [ -d "$workingDir/.venv" ]; then
+  source "$workingDir/.venv/bin/activate"
+fi
+
+# Load .env file if it exists
+if [ -f "$workingDir/.env" ]; then
+  export $(grep -v '^#' "$workingDir/.env" | xargs)
+fi
+
 # Paths
 pathToConfigFile="$workingDir/HTWG-MFA-WS2526-STUD.ovpn"
 pathToPythonScript="$workingDir/getotp.py"
