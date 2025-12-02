@@ -29,6 +29,12 @@ vpn-connect/
 
 * **Python 3.x** with the `pyotp` package installed:
 
+   To keep dependencies isolated, you can use a virtual environment:
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+   Then install package `pyotp`
   ```bash
   pip install pyotp
   ```
@@ -123,7 +129,7 @@ export HTWG_TOTP_SECRET="JBSWY3DPEHPK3PXP"
 
 ## Optional: Create a Symlink
 
-### Create a symlink 
+### Create a symlink
 Execute this command while being in this repo.
 
 ```bash
