@@ -5,6 +5,10 @@ It combines your password with a **time-based one-time password (TOTP)** generat
 
 ---
 
+## Disclaimer
+
+The current version stores the password and user as env variable on the system. This is considered not safe. Use this script on one's own responsibility. Feel free to implement an own version with a secured password-manager.   
+
 ## Project Structure
 
 ```
@@ -139,3 +143,5 @@ This way, you can keep your script in its project folder but still run it global
 ```bash
 htwgvpn
 ```
+
+
